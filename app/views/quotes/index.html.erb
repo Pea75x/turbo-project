@@ -1,3 +1,4 @@
+<%= turbo_stream_from "quotes" %>
 <main class="container">
     <div class="header">
       <h1>Quotes</h1>
@@ -5,5 +6,8 @@
     </div>
 
     <%= turbo_frame_tag Quote.new %>
-    <%= render @quotes %>
+
+    <%= turbo_frame_tag "quotes" do %>
+      <%= render @quotes %>
+    <% end %>
 </main>
