@@ -9,5 +9,6 @@
 
     <%= turbo_frame_tag "quotes" do %>
       <%= render @quotes %>
+      <%= render "quotes/empty_state" %>
     <% end %>
 </main>

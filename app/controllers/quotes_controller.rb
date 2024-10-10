@@ -16,8 +16,6 @@ class QuotesController < ApplicationController
     @quote = current_company.quotes.build(quote_params)
 
     if @quote.save
-      flash[:notice] = "Quote was successfully created"
-      logger.info "Flash notice set: #{flash[:notice]}"
       respond_to do |format|
         format.html { redirect_to quotes_path, notice: "Quote was successfully created" }
         format.turbo_stream
